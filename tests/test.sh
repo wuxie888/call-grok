@@ -105,7 +105,7 @@ pass "structured-output recovery regression"
 
 privacy_pattern='/Users/(myfuture|vibecoding)|/home/[^/]+|BEGIN (RSA |OPENSSH )?PRIVATE KEY|[A-Za-z0-9_]*(API_KEY|TOKEN|SECRET|PASSWORD)='
 if command -v rg >/dev/null 2>&1; then
-  privacy_scan=(rg -n --hidden --glob '!README*' --glob '!SECURITY.md' --glob '!tests/test.sh' "$privacy_pattern" "$ROOT")
+  privacy_scan=(rg -n --hidden --glob '!README*' --glob '!SECURITY.md' --glob '!test.sh' "$privacy_pattern" "$ROOT")
 else
   privacy_scan=(grep -RInE --exclude='README*' --exclude='SECURITY.md' --exclude='test.sh' --exclude-dir='.git' "$privacy_pattern" "$ROOT")
 fi
