@@ -8,21 +8,12 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  test-unix:
     name: Test (${{ matrix.os }})
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - os: ubuntu-latest
-            shell: bash
-            command: ./tests/test.sh
-          - os: macos-14
-            shell: bash
-            command: ./tests/test.sh
-          - os: windows-latest
-            shell: pwsh
-            command: ./tests/test-windows.ps1
+        os: [ubuntu-latest, macos-14]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
@@ -30,5 +21,16 @@ jobs:
         with:
           node-version: 22
       - name: Run offline safety and regression tests
-        shell: ${{ matrix.shell }}
-        run: ${{ matrix.command }}
+        run: ./tests/test.sh
+
+  test-windows:
+    name: Test (windows-latest)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Run offline safety and regression tests
+        shell: pwsh
+        run: ./tests/test-windows.ps1
