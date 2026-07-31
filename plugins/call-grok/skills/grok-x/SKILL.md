@@ -18,7 +18,9 @@ Use Grok as a bounded specialist. Codex remains the orchestrator, verifier, and 
 
 ## Search X
 
-1. Resolve this Skill's directory at runtime and check availability without exposing credentials:
+1. Select the native runner: `.ps1` on Windows PowerShell, `.sh` on macOS/Linux/WSL/Bash. Native Windows has offline PowerShell CI coverage, but live Grok OAuth and X retrieval remain unverified there.
+
+2. Resolve this Skill's directory at runtime and check availability without exposing credentials:
 
    ```bash
    command -v grok
@@ -27,13 +29,17 @@ Use Grok as a bounded specialist. Codex remains the orchestrator, verifier, and 
 
    If Grok is missing, invoke `$call-grok` to perform the approved install and login flow, then resume this request. Do not use `grok models` as an authoritative authentication probe.
 
-2. Run:
+3. Run:
 
    ```bash
    scripts/run-x-intel.sh "USER QUERY"
    ```
 
-3. Optionally constrain the task with environment variables:
+   ```powershell
+   & scripts/run-x-intel.ps1 -Query "USER QUERY"
+   ```
+
+4. Optionally constrain the task with environment variables:
 
    ```bash
    GROK_X_FROM=2026-07-28 \
@@ -42,10 +48,18 @@ Use Grok as a bounded specialist. Codex remains the orchestrator, verifier, and 
    scripts/run-x-intel.sh "What changed?"
    ```
 
-4. Treat the JSON as retrieval output, not final truth.
-5. Resolve every important returned X URL and confirm its canonical handle and status ID. Never accept Grok's claim that a handle is misspelled without this check.
-6. For material claims, cross-check the official site, repository, paper, changelog, or another independent source.
-7. Separate:
+   ```powershell
+   & scripts/run-x-intel.ps1 `
+     -Query "What changed?" `
+     -FromDate "2026-07-28" `
+     -ToDate "2026-07-29" `
+     -Handles "xai,OpenAI"
+   ```
+
+5. Treat the JSON as retrieval output, not final truth.
+6. Resolve every important returned X URL and confirm its canonical handle and status ID. Never accept Grok's claim that a handle is misspelled without this check.
+7. For material claims, cross-check the official site, repository, paper, changelog, or another independent source.
+8. Separate:
    - what the X post directly shows;
    - what its author claims;
    - what another source confirms;

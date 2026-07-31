@@ -13,10 +13,20 @@ Before setup, retain the user's original goal and inputs. Setup is an interrupti
 
 ## Run the local preflight
 
+### Select the native runner
+
+- On native Windows PowerShell, use the `.ps1` runner. Do not route through Git Bash merely because it is installed.
+- On macOS, Linux, WSL, or an explicitly selected Bash environment, use the `.sh` runner.
+- Native Windows has offline PowerShell CI coverage. Live Grok OAuth, X retrieval, and Imagine media remain unverified on Windows, so preserve that evidence boundary.
+
 Resolve this Skill's directory at runtime and run:
 
 ```bash
 scripts/grok-bootstrap.sh check --capability core
+```
+
+```powershell
+& scripts/grok-bootstrap.ps1 -Action Check -Capability core
 ```
 
 Use `--capability x` for X work and `--capability video` for video work. Read [references/runtime-contract.md](references/runtime-contract.md) when handling a non-ready status.
@@ -31,12 +41,20 @@ If the user explicitly requested installation/configuration, or approves after s
 scripts/grok-bootstrap.sh install --approved
 ```
 
+```powershell
+& scripts/grok-bootstrap.ps1 -Action Install -Approved
+```
+
 Otherwise state that the official installer will install the stable CLI under `~/.grok/bin` and ask once for permission. Do not install from an unofficial mirror, request an API key, enable billing, or require administrator access by default.
 
 After installation, start login:
 
 ```bash
 scripts/grok-bootstrap.sh login --approved --oauth
+```
+
+```powershell
+& scripts/grok-bootstrap.ps1 -Action Login -Approved -LoginMode oauth
 ```
 
 Use `--device-auth` only for a remote or headless machine. The Skill may open the authorization flow and wait, but the user must inspect the account and perform the final browser/device approval. Never click account authorization on the user's behalf.

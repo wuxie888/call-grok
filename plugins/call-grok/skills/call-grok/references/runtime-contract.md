@@ -12,6 +12,8 @@
 
 `auth` remains `unknown` during local preflight. Do not reinterpret it as logged out. Complete `grok login` when requested, then let the first bounded original task reveal a real authentication error if one remains.
 
+Use `grok-bootstrap.ps1` in native Windows PowerShell and `grok-bootstrap.sh` in macOS/Linux/WSL/Bash. Both emit the same status fields and exit codes. The PowerShell video runner uses native JSON parsing and therefore requires `ffmpeg` and `ffprobe`, but not `jq`; the Bash video runner requires all three.
+
 Installation and login are separate authority gates:
 
 - Installation changes local files and shell PATH. It requires an explicit install/configure request or approval.

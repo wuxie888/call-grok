@@ -41,7 +41,7 @@ assert entry["name"] == "call-grok"
 assert entry["source"]["path"] == "./plugins/call-grok"
 assert entry["policy"] == {"installation": "AVAILABLE", "authentication": "ON_USE"}
 assert plugin["name"] == "call-grok"
-assert plugin["version"] == "1.0.0"
+assert plugin["version"] == "1.1.0"
 assert plugin["skills"] == "./skills/"
 assert plugin["license"] == "MIT"
 PY
@@ -69,7 +69,40 @@ while IFS= read -r script; do
   bash -n "$script"
 done < <(find "$PLUGIN/skills" -type f -name '*.sh' -print)
 node --check "$PLUGIN/skills/grok-x/scripts/extract-final-json.mjs" >/dev/null
+node --check "$ROOT/tests/check-markdown-links.mjs" >/dev/null
 pass "shell and Node syntax"
+
+for script in \
+  "$PLUGIN/skills/call-grok/scripts/grok-bootstrap.ps1" \
+  "$PLUGIN/skills/grok-x/scripts/run-x-intel.ps1" \
+  "$PLUGIN/skills/grok-video/scripts/run-video.ps1"; do
+  [[ -s "$script" ]] || fail "missing PowerShell runner: $script"
+done
+grep -Fq 'https://x.ai/cli/install.ps1' "$PLUGIN/skills/call-grok/scripts/grok-bootstrap.ps1" || fail "PowerShell bootstrap does not use the official installer"
+pass "native Windows runner files and official installer boundary"
+
+node "$ROOT/tests/check-markdown-links.mjs"
+pass "local Markdown links and media targets"
+
+python3 - "$ROOT/assets/call-grok-hero.svg" "$ROOT/assets/install-proof.svg" "$ROOT/assets/social-preview.png" <<'PY'
+import pathlib
+import struct
+import sys
+import xml.etree.ElementTree as ET
+
+for svg_path in map(pathlib.Path, sys.argv[1:3]):
+    root = ET.parse(svg_path).getroot()
+    assert root.attrib.get("width") and root.attrib.get("height")
+    assert root.attrib.get("viewBox")
+
+png = pathlib.Path(sys.argv[3])
+data = png.read_bytes()
+assert data[:8] == b"\x89PNG\r\n\x1a\n"
+width, height = struct.unpack(">II", data[16:24])
+assert (width, height) == (1280, 640)
+assert png.stat().st_size < 1_000_000
+PY
+pass "visual assets and Social Preview dimensions"
 
 set +e
 HOME="$TMP_TEST_DIR/home" PATH="/usr/bin:/bin" \
@@ -105,9 +138,9 @@ pass "structured-output recovery regression"
 
 privacy_pattern='/Users/(myfuture|vibecoding)|/home/[^/]+|BEGIN (RSA |OPENSSH )?PRIVATE KEY|[A-Za-z0-9_]*(API_KEY|TOKEN|SECRET|PASSWORD)='
 if command -v rg >/dev/null 2>&1; then
-  privacy_scan=(rg -n --hidden --glob '!README*' --glob '!SECURITY.md' --glob '!test.sh' "$privacy_pattern" "$ROOT")
+  privacy_scan=(rg -n --hidden --glob '!.git/**' --glob '!README*' --glob '!SECURITY.md' --glob '!test.sh' --glob '!test-windows.ps1' "$privacy_pattern" "$ROOT")
 else
-  privacy_scan=(grep -RInE --exclude='README*' --exclude='SECURITY.md' --exclude='test.sh' --exclude-dir='.git' "$privacy_pattern" "$ROOT")
+  privacy_scan=(grep -RInE --exclude='README*' --exclude='SECURITY.md' --exclude='test.sh' --exclude='test-windows.ps1' --exclude-dir='.git' "$privacy_pattern" "$ROOT")
 fi
 if "${privacy_scan[@]}" >"$TMP_TEST_DIR/privacy.txt"; then
   cat "$TMP_TEST_DIR/privacy.txt" >&2

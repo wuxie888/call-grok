@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  test-unix:
     name: Test (${{ matrix.os }})
     strategy:
       fail-fast: false
@@ -22,3 +22,15 @@ jobs:
           node-version: 22
       - name: Run offline safety and regression tests
         run: ./tests/test.sh
+
+  test-windows:
+    name: Test (windows-latest)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Run offline safety and regression tests
+        shell: pwsh
+        run: ./tests/test-windows.ps1

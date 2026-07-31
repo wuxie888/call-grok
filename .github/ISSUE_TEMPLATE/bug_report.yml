@@ -1,0 +1,68 @@
+name: Bug report
+description: Report a reproducible Call Grok failure without sharing credentials
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Call Grok. Never paste tokens, API keys, cookies, Grok credential files, private links, or unredacted session output.
+  - type: dropdown
+    id: capability
+    attributes:
+      label: Affected capability
+      options:
+        - Plugin installation or discovery
+        - Grok CLI bootstrap or login
+        - X-native research
+        - Imagine video execution
+        - Documentation
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform and architecture
+      placeholder: macOS 15 arm64, Ubuntu 24.04 x86_64, Windows 11 + WSL2
+    validations:
+      required: true
+  - type: input
+    id: shell
+    attributes:
+      label: Shell
+      placeholder: zsh, bash, WSL bash, PowerShell, Git Bash
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Codex and Grok CLI versions
+      placeholder: codex ..., grok ...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Remove usernames, local private paths, account data, and secrets
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and redacted error
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, tokens, cookies, private links, account details, and unredacted local paths
+          required: true
