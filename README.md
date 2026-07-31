@@ -54,7 +54,7 @@ xAI 官方 Grok Build 提供 macOS、Linux、WSL 和 Windows PowerShell 安装�
 | Linux x86_64 | 支持 | 离线测试和 Ubuntu CI 已通过；真实 Grok 登录/媒体尚未验证 |
 | Linux arm64 | 支持 | 预检与安装路径已编写；尚未真机验证 |
 | WSL | 支持 | 使用 Linux/Bash 路径；尚未独立端到端验证 |
-| Windows PowerShell | 支持，官方命令为 `irm https://x.ai/cli/install.ps1 \| iex` | **原生执行器已实现**；Windows 离线 CI 是发布门，真实 OAuth、X 和 Imagine 仍待 Windows 账号验收 |
+| Windows PowerShell | 支持，官方命令为 `irm https://x.ai/cli/install.ps1 \| iex` | **原生执行器与 Windows 离线 CI 已通过**；真实 OAuth、X 和 Imagine 仍待 Windows 账号验收 |
 | Windows Git Bash | 官方安装器支持 | 不再是原生 Windows 的推荐路径；PowerShell 用户应直接使用 `.ps1` 执行器 |
 
 Windows PowerShell 上的预检、官方安装、OAuth/device login、X 结构化输出与视频产物验收都有对应脚本，但项目仍会把“Windows 离线 CI 通过”与“Windows 真实 Grok 账号任务通过”分开报告
@@ -148,7 +148,7 @@ codex plugin marketplace remove call-grok
 - Grok 结构化输出失配后的最终 JSON 恢复回归测试
 - macOS 与 Ubuntu 离线 CI
 - 从公开 `v1.0.0` Tag 添加 Codex Marketplace 并安装插件
-- Windows PowerShell 脚本解析、缺失/就绪 CLI 预检、视频付费确认门、结构化输出恢复与隐私扫描（`v1.1.0` 发布门）
+- Windows PowerShell 脚本解析、缺失/就绪 CLI 预检、视频付费确认门、结构化输出恢复与隐私扫描（GitHub `windows-latest` 已通过）
 
 每一项只代表对应边界，不代表 xAI 永久保证所有账号、地区或未来 CLI 版本都保持一致
 

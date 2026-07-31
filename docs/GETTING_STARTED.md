@@ -10,7 +10,7 @@
 - 可登录 Grok 的账号
 - macOS Apple Silicon 是当前唯一完成端到端验证的环境
 - Linux/WSL 路径仍需更多真机验收
-- Grok Build 官方支持 Windows PowerShell，本插件 `v1.1.0` 已提供对应 `.ps1` 执行器；当前证据为离线 Windows CI，不等于真实 Windows Grok 账号任务验收
+- Grok Build 官方支持 Windows PowerShell，本插件 `v1.1.0` 已提供对应 `.ps1` 执行器并通过 GitHub `windows-latest` 离线 CI；这不等于真实 Windows Grok 账号任务验收
 
 不确定时先查看 [README 平台矩阵](../README.md)
 

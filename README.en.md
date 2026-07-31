@@ -44,7 +44,7 @@ Call Grok `v1.1.0` adds native `.ps1` executors for bootstrap, X retrieval, and 
 | Linux x86_64 | Supported | Offline tests and Ubuntu CI pass; live Grok login/media are not verified |
 | Linux arm64 | Supported | Preflight/install path exists; no real-device validation |
 | WSL | Supported | Uses the Linux/Bash path; not independently validated end to end |
-| Windows PowerShell | Supported via `irm https://x.ai/cli/install.ps1 \| iex` | **Native runners implemented**; offline Windows CI is a release gate, while live OAuth, X, and Imagine still need a Windows account acceptance run |
+| Windows PowerShell | Supported via `irm https://x.ai/cli/install.ps1 \| iex` | **Native runners and offline Windows CI pass**; live OAuth, X, and Imagine still need a Windows account acceptance run |
 | Windows Git Bash | Official installer supports it | No longer the recommended native path; PowerShell users should use the `.ps1` runners |
 
 Preflight, official installation, OAuth/device login, structured X output, and video artifact acceptance now have PowerShell counterparts. The project still reports offline Windows CI separately from a live Grok account task on Windows.
@@ -99,7 +99,7 @@ Verified on 2026-08-01:
 - Structured-output recovery regression
 - Offline CI on macOS and Ubuntu
 - Public-tag Codex Marketplace installation from `v1.0.0`
-- Native Windows PowerShell parsing, mocked missing/ready preflight, paid-video confirmation gate, structured-output recovery, and privacy scan as the `v1.1.0` release gate
+- Native Windows PowerShell parsing, mocked missing/ready preflight, paid-video confirmation gate, structured-output recovery, and privacy scan passed on GitHub `windows-latest`
 
 Each item is a bounded claim, not a promise that every account, region, platform, or future Grok CLI release behaves identically.
 
