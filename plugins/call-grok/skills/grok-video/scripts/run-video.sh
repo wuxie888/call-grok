@@ -141,6 +141,27 @@ if ! awk -v actual="$ACTUAL_DURATION" -v expected="$DURATION" 'BEGIN { delta=act
   exit 24
 fi
 
+WIDTH="$(printf '%s' "$PROBE_JSON" | jq -r '.streams[0].width // empty')"
+HEIGHT="$(printf '%s' "$PROBE_JSON" | jq -r '.streams[0].height // empty')"
+if [[ -z "$WIDTH" || -z "$HEIGHT" ]]; then
+  echo "ffprobe could not determine video dimensions." >&2
+  exit 23
+fi
+
+if (( WIDTH < HEIGHT )); then
+  SHORT_EDGE="$WIDTH"
+else
+  SHORT_EDGE="$HEIGHT"
+fi
+case "$RESOLUTION" in
+  480p) EXPECTED_EDGE=480 ;;
+  720p) EXPECTED_EDGE=720 ;;
+esac
+if ! awk -v actual="$SHORT_EDGE" -v expected="$EXPECTED_EDGE" 'BEGIN { delta=actual-expected; if (delta<0) delta=-delta; exit(delta <= 32 ? 0 : 1) }'; then
+  echo "Generated video ${WIDTH}x${HEIGHT} does not match requested resolution class $RESOLUTION." >&2
+  exit 25
+fi
+
 if command -v shasum >/dev/null 2>&1; then
   SHA256="$(shasum -a 256 "$DELIVERED_PATH" | awk '{print $1}')"
 else

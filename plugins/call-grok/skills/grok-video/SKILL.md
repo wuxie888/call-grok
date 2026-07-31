@@ -9,16 +9,21 @@ Use Grok only as the video renderer. Keep concept, script, storyboard, camera di
 
 ## Prepare without spending quota
 
-1. Resolve this Skill's directory at runtime.
-2. Run the Grok preflight when available:
+1. Select the native runner: `.ps1` on Windows PowerShell, `.sh` on macOS/Linux/WSL/Bash. Native Windows has offline PowerShell CI coverage, but live Grok OAuth and Imagine generation remain unverified there.
+2. Resolve this Skill's directory at runtime.
+3. Run the Grok preflight when available:
 
    ```bash
    ../call-grok/scripts/grok-bootstrap.sh check --capability video
    ```
 
-3. If Grok is missing, invoke `$call-grok` to install and log in, then resume this task.
-4. Inspect the source image and verify its absolute path, aspect ratio, identity, and intended first frame.
-5. Produce the final motion prompt in Codex. Do not ask Grok to plan shots or create the source image.
+   ```powershell
+   & ../call-grok/scripts/grok-bootstrap.ps1 -Action Check -Capability video
+   ```
+
+4. If Grok is missing, invoke `$call-grok` to install and log in, then resume this task.
+5. Inspect the source image and verify its absolute path, aspect ratio, identity, and intended first frame.
+6. Produce the final motion prompt in Codex. Do not ask Grok to plan shots or create the source image.
 
 The tested first version supports one `image_to_video` call with duration `6` or `10` seconds and resolution `480p` or `720p`. Do not claim untested edit, extend, reference-to-video, or text-to-video support.
 
@@ -47,6 +52,16 @@ scripts/run-video.sh \
   --resolution 480p \
   --output-dir "/absolute/path/output" \
   --confirmed
+```
+
+```powershell
+& scripts/run-video.ps1 `
+  -Image "C:\absolute\path\source.png" `
+  -PromptFile "C:\absolute\path\final-prompt.txt" `
+  -Duration 6 `
+  -Resolution 480p `
+  -OutputDir "C:\absolute\path\output" `
+  -Confirmed
 ```
 
 The script restricts Grok to `image_to_video`, makes one tool call, disables retries, copies the resulting MP4 into the requested output directory, runs `ffprobe`, hashes it, and extracts three QA frames.
