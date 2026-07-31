@@ -21,7 +21,7 @@ fail() {
   exit 1
 }
 
-for command in bash node python3 rg; do
+for command in bash node python3; do
   command -v "$command" >/dev/null 2>&1 || fail "$command is required"
 done
 
@@ -103,9 +103,13 @@ node "$PLUGIN/skills/grok-x/scripts/extract-final-json.mjs" \
   | node "$ROOT/tests/assert-recovery.mjs"
 pass "structured-output recovery regression"
 
-if rg -n --hidden --glob '!README*' --glob '!SECURITY.md' --glob '!tests/test.sh' \
-  '/Users/(myfuture|vibecoding)|/home/[^/]+|BEGIN (RSA |OPENSSH )?PRIVATE KEY|[A-Za-z0-9_]*(API_KEY|TOKEN|SECRET|PASSWORD)=' \
-  "$ROOT" >"$TMP_TEST_DIR/privacy.txt"; then
+privacy_pattern='/Users/(myfuture|vibecoding)|/home/[^/]+|BEGIN (RSA |OPENSSH )?PRIVATE KEY|[A-Za-z0-9_]*(API_KEY|TOKEN|SECRET|PASSWORD)='
+if command -v rg >/dev/null 2>&1; then
+  privacy_scan=(rg -n --hidden --glob '!README*' --glob '!SECURITY.md' --glob '!tests/test.sh' "$privacy_pattern" "$ROOT")
+else
+  privacy_scan=(grep -RInE --exclude='README*' --exclude='SECURITY.md' --exclude='test.sh' --exclude-dir='.git' "$privacy_pattern" "$ROOT")
+fi
+if "${privacy_scan[@]}" >"$TMP_TEST_DIR/privacy.txt"; then
   cat "$TMP_TEST_DIR/privacy.txt" >&2
   fail "private paths or secrets found"
 fi
