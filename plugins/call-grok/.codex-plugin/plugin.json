@@ -1,0 +1,22 @@
+{
+  "name": "call-grok",
+  "version": "1.0.0",
+  "description": "Let Codex call Grok only for X-native research and explicitly confirmed Imagine video generation.",
+  "author": {
+    "name": "无邪",
+    "url": "https://github.com/wuxie888"
+  },
+  "homepage": "https://github.com/wuxie888/call-grok",
+  "repository": "https://github.com/wuxie888/call-grok",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "有事叫 Grok",
+    "shortDescription": "Codex 总控，按需调用 Grok 的 X 情报与 Imagine 视频",
+    "longDescription": "一个负责边界的 Codex 插件：按需安装并登录官方 Grok CLI，将 X 原生检索交给 Grok，将已明确确认的 Imagine 视频调用交给 Grok，而规划、核验和交付仍由 Codex 负责。",
+    "developerName": "无邪",
+    "category": "Productivity",
+    "capabilities": ["X-native research", "Grok CLI bootstrap", "confirmed Imagine video execution"],
+    "defaultPrompt": "用 $call-grok 判断这任务是否真的需要 Grok，需要时完成检测、安装、登录和路由，然后继续原始任务。"
+  }
+}

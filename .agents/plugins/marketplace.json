@@ -1,0 +1,20 @@
+{
+  "name": "call-grok",
+  "interface": {
+    "displayName": "有事叫 Grok"
+  },
+  "plugins": [
+    {
+      "name": "call-grok",
+      "source": {
+        "source": "local",
+        "path": "./plugins/call-grok"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

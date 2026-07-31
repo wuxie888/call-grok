@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">有事叫 Grok</title>
+  <desc id="desc">Codex coordinates research and delivery, while Grok provides X-native retrieval and confirmed Imagine video rendering.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090b10"/>
+      <stop offset="0.55" stop-color="#111620"/>
+      <stop offset="1" stop-color="#081511"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#5cffb0" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#5cffb0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="24"/></filter>
+  </defs>
+  <rect width="1280" height="640" rx="40" fill="url(#bg)"/>
+  <circle cx="970" cy="160" r="240" fill="url(#glow)" filter="url(#soft)"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="72" y="94" fill="#5cffb0" font-size="22" font-weight="700" letter-spacing="5">CODEX PLUGIN</text>
+    <text x="72" y="202" fill="#f7fafc" font-size="76" font-weight="760">有事叫 Grok</text>
+    <text x="74" y="255" fill="#aab3c0" font-size="25">Codex 总控 · Grok 专长执行 · 结果可核验</text>
+    <g transform="translate(72 334)">
+      <rect width="292" height="170" rx="24" fill="#161c27" stroke="#354052"/>
+      <circle cx="42" cy="43" r="17" fill="#5cffb0"/>
+      <text x="72" y="51" fill="#f7fafc" font-size="25" font-weight="700">Codex</text>
+      <text x="28" y="97" fill="#b9c1cc" font-size="19">规划 · 核验 · 提示词</text>
+      <text x="28" y="130" fill="#b9c1cc" font-size="19">QA · 最终交付</text>
+    </g>
+    <path d="M386 418 H466" stroke="#5cffb0" stroke-width="3" stroke-linecap="round"/>
+    <path d="M452 406 L468 418 L452 430" fill="none" stroke="#5cffb0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(490 334)">
+      <rect width="292" height="170" rx="24" fill="#161c27" stroke="#354052"/>
+      <text x="28" y="51" fill="#f7fafc" font-size="25" font-weight="700">Grok · X</text>
+      <text x="28" y="97" fill="#b9c1cc" font-size="19">原生搜索 · 完整链接</text>
+      <text x="28" y="130" fill="#b9c1cc" font-size="19">证据与缺口分开</text>
+    </g>
+    <path d="M804 418 H884" stroke="#5cffb0" stroke-width="3" stroke-linecap="round"/>
+    <path d="M870 406 L886 418 L870 430" fill="none" stroke="#5cffb0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(908 334)">
+      <rect width="300" height="170" rx="24" fill="#161c27" stroke="#354052"/>
+      <text x="28" y="51" fill="#f7fafc" font-size="25" font-weight="700">Grok · Imagine</text>
+      <text x="28" y="97" fill="#b9c1cc" font-size="19">确认后单次执行</text>
+      <text x="28" y="130" fill="#b9c1cc" font-size="19">MP4 · ffprobe · 三帧 QA</text>
+    </g>
+    <text x="72" y="580" fill="#6f7b8c" font-size="18">ONE ENTRY  /  EXPLICIT AUTHORITY  /  NO SILENT RETRY</text>
+  </g>
+</svg>

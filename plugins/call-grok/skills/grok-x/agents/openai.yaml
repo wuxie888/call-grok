@@ -1,0 +1,4 @@
+interface:
+  display_name: "有事叫 Grok · X 情报"
+  short_description: "调用 Grok 获取可核验的 X 原生帖子、线程与舆情证据"
+  default_prompt: "Use $grok-x to search X with Grok and return source-linked evidence for verification."

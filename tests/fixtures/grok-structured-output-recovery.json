@@ -1,0 +1,10 @@
+{
+  "text": "Retrieval complete.\n{\"query\":\"MarsCoin sentiment\",\"status\":\"success\",\"x_search_used\":true,\"searched_at\":\"2026-07-31T00:00:00Z\",\"summary\":\"One source-linked item.\",\"items\":[{\"url\":\"https://x.com/example/status/1234567890123456789\",\"author_name\":\"Example\",\"handle\":\"example\",\"published_at\":\"2026-07-31T00:00:00Z\",\"source_type\":\"original\",\"post_summary\":\"Example summary\",\"direct_evidence\":\"Example evidence\",\"media_types\":[\"none\"],\"relevance\":\"high\",\"confidence\":\"high\",\"caveats\":[]}],\"gaps\":[],\"verification_targets\":[\"Official project page\"]}\nTrailing characters that caused strict structured output parsing to fail.",
+  "structuredOutput": null,
+  "structuredOutputError": "Unexpected non-whitespace character after JSON",
+  "modelUsage": {
+    "grok-test": {}
+  },
+  "num_turns": 2,
+  "total_cost_usd": 0
+}
