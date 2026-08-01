@@ -1,9 +1,9 @@
 ---
 name: call-grok
-description: Call Grok only when its distinctive capability is useful, while Codex remains the coordinator. Use when a user says to call, use, ask, install, configure, log in to, or troubleshoot Grok/Grok CLI; when X/Twitter-native intelligence is needed; or when a confirmed Grok Imagine video execution should be handed off. Detect a missing CLI, guide an authorized user-level install and OAuth login, preserve the original request, and resume it through grok-x or grok-video. The memorable user-facing idea is "有事叫 Grok".
+description: Call Grok only when its distinctive capability is useful, while Codex remains the coordinator. Use when a user says to call, use, ask, install, configure, log in to, or troubleshoot Grok/Grok CLI; when X/Twitter-native intelligence is needed; or when a confirmed Grok Imagine video execution should be handed off. Detect a missing CLI, guide an authorized user-level install and OAuth login, preserve the original request, and resume it through grok-x or grok-video. The memorable user-facing idea is "快请 Grok".
 ---
 
-# 有事叫 Grok
+# 快请 Grok
 
 Keep Codex as the planner, verifier, and final deliverer. Use Grok only for its distinct X-native retrieval, an explicitly requested independent opinion, or confirmed Imagine video execution.
 

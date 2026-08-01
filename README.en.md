@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/call-grok-hero.svg" alt="Call Grok: Codex coordinates while Grok handles X-native intelligence and confirmed Imagine video execution" width="100%">
+  <img src="assets/call-grok-hero.png" alt="Call Grok: GPT advises, Codex hits the X button, and Elon Musk tows in Grok for X-native intelligence and Imagine video" width="100%">
 </p>
 
 <p align="center">

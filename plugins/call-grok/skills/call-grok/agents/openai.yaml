@@ -1,4 +1,4 @@
 interface:
-  display_name: "有事叫 Grok"
+  display_name: "快请 Grok"
   short_description: "自动安装登录 Grok，并按需调用 X 情报与 Imagine 视频能力"
   default_prompt: "Use $call-grok to prepare Grok when needed and route this request to its distinctive X or video capability."

@@ -1,7 +1,7 @@
 {
   "name": "call-grok",
   "interface": {
-    "displayName": "有事叫 Grok"
+    "displayName": "快请 Grok"
   },
   "plugins": [
     {

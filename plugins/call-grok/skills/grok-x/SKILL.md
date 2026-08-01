@@ -3,7 +3,7 @@ name: grok-x
 description: Use Grok CLI as Codex's X-native research specialist. Trigger for X/Twitter post, account, thread, discourse, launch, rumor, sentiment, or real-time AI/product monitoring; requests to ask or search Grok; and recurring X intelligence reports. Return source-linked evidence for Codex to verify. Keep Grok video generation and the user's own authorized custom voice available only when explicitly requested and approved; do not route ordinary image generation, coding, TTS, STT, or general research here by default.
 ---
 
-# 有事叫 Grok · X 情报
+# 快请 Grok · X 情报
 
 Use Grok as a bounded specialist. Codex remains the orchestrator, verifier, and final writer.
 

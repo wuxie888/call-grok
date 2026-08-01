@@ -11,7 +11,7 @@
   "license": "MIT",
   "skills": "./skills/",
   "interface": {
-    "displayName": "有事叫 Grok",
+    "displayName": "快请 Grok",
     "shortDescription": "Codex 总控，按需调用 Grok 的 X 情报与 Imagine 视频",
     "longDescription": "一个负责边界的 Codex 插件：按需安装并登录官方 Grok CLI，将 X 原生检索交给 Grok，将已明确确认的 Imagine 视频调用交给 Grok，而规划、核验和交付仍由 Codex 负责。",
     "developerName": "无邪",
