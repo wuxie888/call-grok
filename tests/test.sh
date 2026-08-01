@@ -84,16 +84,21 @@ pass "native Windows runner files and official installer boundary"
 node "$ROOT/tests/check-markdown-links.mjs"
 pass "local Markdown links and media targets"
 
-python3 - "$ROOT/assets/call-grok-hero.svg" "$ROOT/assets/install-proof.svg" "$ROOT/assets/social-preview.png" <<'PY'
+python3 - "$ROOT/assets/call-grok-hero.png" "$ROOT/assets/install-proof.svg" "$ROOT/assets/social-preview.png" <<'PY'
 import pathlib
 import struct
 import sys
 import xml.etree.ElementTree as ET
 
-for svg_path in map(pathlib.Path, sys.argv[1:3]):
-    root = ET.parse(svg_path).getroot()
-    assert root.attrib.get("width") and root.attrib.get("height")
-    assert root.attrib.get("viewBox")
+hero = pathlib.Path(sys.argv[1])
+hero_data = hero.read_bytes()
+assert hero_data[:8] == b"\x89PNG\r\n\x1a\n"
+hero_width, hero_height = struct.unpack(">II", hero_data[16:24])
+assert (hero_width, hero_height) == (1774, 887)
+
+install_proof = ET.parse(pathlib.Path(sys.argv[2])).getroot()
+assert install_proof.attrib.get("width") and install_proof.attrib.get("height")
+assert install_proof.attrib.get("viewBox")
 
 png = pathlib.Path(sys.argv[3])
 data = png.read_bytes()

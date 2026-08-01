@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/call-grok-hero.svg" alt="有事叫 Grok：Codex 负责总控，Grok 负责 X 情报和已确认的 Imagine 视频执行" width="100%">
+  <img src="assets/call-grok-hero.png" alt="快请 Grok：GPT 协助思考，Codex 拍下 X 按钮，马斯克把 Grok 这位 X 情报与 Imagine 视频外援拖来" width="100%">
 </p>
 
 <p align="center">
@@ -14,9 +14,9 @@
   <a href="README.en.md">English</a> · <a href="#两条命令安装">Install</a> · <a href="docs/GETTING_STARTED.md">第一次成功</a> · <a href="docs/TROUBLESHOOTING.md">排错</a>
 </p>
 
-# 有事叫 Grok
+# 快请 Grok
 
-有事叫 Grok 是一个给 Codex 用的社区插件：你只需说目标，Codex 会判断什么时候真的值得叫 Grok，并在任务结束前把证据、缺口和产物验收好
+快请 Grok 是一个给 Codex 用的社区插件：你只需说目标，Codex 会判断什么时候真的值得请 Grok 出手，并在任务结束前把证据、缺口和产物验收好
 
 ```text
 你：用 $call-grok 查一下 X 上最近大家怎么评价这个项目
@@ -46,9 +46,9 @@ Codex：解析结果 → 核对链接 → 交叉验证 → 给你最终结论/�
 
 xAI 官方 Grok Build 提供 macOS、Linux、WSL 和 Windows PowerShell 安装方式，所以 **Grok CLI 本身不是不支持 Windows**
 
-有事叫 Grok `v1.1.0` 为 bootstrap、X 检索和 Imagine 视频增加了原生 `.ps1` 执行器，不再要求 Windows 用户绕到 Git Bash
+快请 Grok `v1.1.0` 为 bootstrap、X 检索和 Imagine 视频增加了原生 `.ps1` 执行器，不再要求 Windows 用户绕到 Git Bash
 
-| 环境 | Grok Build 官方状态 | 有事叫 Grok v1.1.0 |
+| 环境 | Grok Build 官方状态 | 快请 Grok v1.1.0 |
 |---|---|---|
 | macOS Apple Silicon | 支持 | **端到端已验证**：安装、OAuth、X 检索、Imagine 视频 |
 | Linux x86_64 | 支持 | 离线测试和 Ubuntu CI 已通过；真实 Grok 登录/媒体尚未验证 |

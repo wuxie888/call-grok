@@ -2,7 +2,7 @@
 
 ## Credential boundary
 
-有事叫 Grok 不读取、打印、复制或上传 Grok 的凭据文件。安装器只从 `https://x.ai/cli/install.sh` 下载，登录使用 Grok CLI 官方 OAuth 或 device-auth 流程，最终授权由用户完成。
+快请 Grok 不读取、打印、复制或上传 Grok 的凭据文件。安装器只从 `https://x.ai/cli/install.sh` 下载，登录使用 Grok CLI 官方 OAuth 或 device-auth 流程，最终授权由用户完成。
 
 请不要在 Issue、截图或日志中提交 token、API key、Cookie 或登录文件。如果秘密已暴露，请先在对应服务中撤销，再报告问题。
 

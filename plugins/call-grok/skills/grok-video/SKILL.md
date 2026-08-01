@@ -3,7 +3,7 @@ name: grok-video
 description: Execute and verify an explicitly confirmed Grok Imagine image-to-video request through Grok CLI while Codex retains creative control. Use when the user specifically wants Grok/Imagine video generation from a prepared source image, including a confirmed test or final shot. Enforce exact duration, resolution, input, quota/cost disclosure, one-call/no-retry behavior, local artifact collection, ffprobe validation, hashes, and sampled-frame QA. Do not use for ordinary image work or unconfirmed paid generation.
 ---
 
-# 有事叫 Grok · 视频
+# 快请 Grok · 视频
 
 Use Grok only as the video renderer. Keep concept, script, storyboard, camera direction, motion design, prompt writing, source-image preparation, QA, and delivery in Codex.
 
