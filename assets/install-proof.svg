@@ -21,7 +21,7 @@
   <text x="640" y="40" text-anchor="middle" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">PINNED RELEASE INSTALL · REPRODUCIBLE · AUTH ON USE</text>
   <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20">
     <text x="46" y="112" fill="#5cffb0">$</text>
-    <text x="76" y="112" fill="#e6edf3">codex plugin marketplace add wuxie888/call-grok --ref v1.1.0</text>
+    <text x="76" y="112" fill="#e6edf3">codex plugin marketplace add wuxie888/call-grok --ref v1.2.0</text>
     <rect x="46" y="138" width="1188" height="58" rx="10" fill="#0d1117" stroke="#30363d"/>
     <circle cx="76" cy="167" r="10" fill="#238636"/>
     <path d="M70 167 L74 171 L82 162" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -36,7 +36,7 @@
     <path d="M70 297 L74 301 L82 292" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     <text x="101" y="304" fill="#b1bac4">plugin</text>
     <text x="195" y="304" fill="#e6edf3">call-grok@call-grok</text>
-    <text x="487" y="304" fill="#6e7681">· 1.1.0 · auth ON_USE</text>
+    <text x="487" y="304" fill="#6e7681">· 1.2.0 · auth ON_USE</text>
 
     <path d="M46 370 H1234" stroke="url(#line)" stroke-width="2"/>
     <text x="46" y="418" fill="#8b949e">NEW CODEX TASK</text>

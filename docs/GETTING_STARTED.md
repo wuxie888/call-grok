@@ -17,7 +17,7 @@
 ## 1. 安装锁定版本
 
 ```bash
-codex plugin marketplace add wuxie888/call-grok --ref v1.1.0
+codex plugin marketplace add wuxie888/call-grok --ref v1.2.0
 codex plugin add call-grok@call-grok
 ```
 

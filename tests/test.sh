@@ -41,7 +41,7 @@ assert entry["name"] == "call-grok"
 assert entry["source"]["path"] == "./plugins/call-grok"
 assert entry["policy"] == {"installation": "AVAILABLE", "authentication": "ON_USE"}
 assert plugin["name"] == "call-grok"
-assert plugin["version"] == "1.1.0"
+assert plugin["version"] == "1.2.0"
 assert plugin["skills"] == "./skills/"
 assert plugin["license"] == "MIT"
 PY

@@ -43,7 +43,7 @@ Windows PowerShell 可用 `Get-Command codex` 替代 `which codex`
 
 ## Windows PowerShell 上插件执行失败
 
-`v1.1.0` 已经为 bootstrap、X 检索和 Imagine 视频提供原生 PowerShell 执行器。如果仍失败，先确认安装的是 `v1.1.0` 而不是旧版
+`v1.1.0` 已经为 bootstrap、X 检索和 Imagine 视频提供原生 PowerShell 执行器。如果仍失败，先确认安装的是当前 `v1.2.0` 而不是旧版
 
 xAI 官方 PowerShell 安装方式是：
 

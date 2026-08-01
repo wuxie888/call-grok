@@ -4,8 +4,12 @@
 
 ## Unreleased
 
+## 1.2.0 - 2026-08-02
+
 - 中文品牌名由“有事叫 Grok”更新为“快请 Grok”，保留插件 ID、仓库名和安装命令 `call-grok`
 - 替换 README Hero 与 Social Preview，用漫画场景表达 GPT 协助思考、Codex 总控、Grok 按需出手
+- 统一插件、三个 Skill、中英文 README、安全说明和公开展示中的品牌表述
+- 保持 X 原生检索、CLI 安装登录与 Imagine 视频确认门的既有能力和安全边界不变
 
 ## 1.1.0 - 2026-08-01
 

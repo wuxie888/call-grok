@@ -30,7 +30,7 @@ try {
     Assert-True ($marketplace.name -eq 'call-grok') 'unexpected marketplace name'
     Assert-True ($marketplace.plugins[0].policy.authentication -eq 'ON_USE') 'unexpected auth policy'
     Assert-True ($manifest.name -eq 'call-grok') 'unexpected plugin name'
-    Assert-True ($manifest.version -eq '1.1.0') 'unexpected plugin version'
+    Assert-True ($manifest.version -eq '1.2.0') 'unexpected plugin version'
     Pass 'marketplace and plugin manifests'
 
     foreach ($skill in @('call-grok', 'grok-x', 'grok-video')) {
