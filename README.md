@@ -66,7 +66,7 @@ Windows PowerShell 上的预检、官方安装、OAuth/device login、X 结构�
 前置条件：支持 Plugin Marketplace 的 Codex，以及一个可登录 Grok 的账号
 
 ```bash
-codex plugin marketplace add wuxie888/call-grok --ref v1.1.0
+codex plugin marketplace add wuxie888/call-grok --ref v1.2.0
 codex plugin add call-grok@call-grok
 ```
 
@@ -127,7 +127,7 @@ codex plugin add call-grok@call-grok
 
 剩余额度以 Grok CLI `/usage` 或 xAI 账号页面为准，插件不会用单次调用的 `total_cost_usd` 猜测周配额
 
-锁定 `v1.1.0` 的安装不会悄悄跟随 `main`。未来切换到新 Tag 时，按新版 Release 说明移除旧插件/市场后重新添加
+锁定 `v1.2.0` 的安装不会悄悄跟随 `main`。未来切换到新 Tag 时，按新版 Release 说明移除旧插件/市场后重新添加
 
 当前版卸载：
 
@@ -140,7 +140,7 @@ codex plugin marketplace remove call-grok
 
 ## 验证状态
 
-`v1.0.0` 的 macOS 真实能力验证与 `v1.1.0` 的跨平台离线验证（2026-08-01）：
+`v1.0.0` 的 macOS 真实能力验证、`v1.1.0` 的跨平台离线验证与 `v1.2.0` 的品牌发布验收（2026-08-02）：
 
 - macOS Apple Silicon 上 Grok CLI `0.2.114` 的真实 X 检索与 Imagine 生成
 - 全新 HOME 中 Grok CLI `0.2.117` 的官方安装流程
